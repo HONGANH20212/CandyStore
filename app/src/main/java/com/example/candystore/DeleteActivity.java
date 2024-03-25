@@ -26,7 +26,7 @@ public class DeleteActivity extends AppCompatActivity {
             RelativeLayout layout  = new RelativeLayout(this);
             ScrollView scrollView  = new ScrollView(this);
             RadioGroup group = new RadioGroup(this);
-            for (Candy candy candies){
+            for (Candy candy : candies){
                 RadioButtonHandler rb = new RadioButton(this);
                 rb.setId(candy.getId() );
                 rb.setText(candy.toString());
@@ -54,8 +54,7 @@ public class DeleteActivity extends AppCompatActivity {
     params.setMargins (0, 0, 0, 50); layout.addView(backButton, params);
     setContentView(layout);
    }
-   private class RadioButtonHandler
-        implements RadioGroup. OnCheckedChangeListener (
+   private class RadioButtonHandler implements RadioGroup.OnCheckedChangeListener{
         public void onCheckedChanged(RadioGroup group, int checkedId){
 // delete candy from database dbManager.deleteById(checkedId);
             Toast.makeText(DeleteActivity.this, "Candy deleted", Toast.LENGTH_SHORT).show();
