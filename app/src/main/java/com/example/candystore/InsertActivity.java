@@ -5,9 +5,6 @@ import android.widget.EditText;
 import android.view.View;
 import android.widget.Toast;
 
-
-
-
 public class InsertActivity extends AppCompatActivity {
     private DatabaseManager dbManager;
     public void onCreate(Bundle savedInstanceState) {
@@ -43,7 +40,5 @@ public class InsertActivity extends AppCompatActivity {
     public void goBack(View v) {
         this.finish();
     }
-
-
 }
 
