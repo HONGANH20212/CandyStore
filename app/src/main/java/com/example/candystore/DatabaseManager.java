@@ -34,23 +34,23 @@ public class DatabaseManager extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         String sqlInsert = "insert into " + TABLE_CANDY;
         sqlInsert += " values(null, '" + candy.getName();
-        sqlInsert += " ', '" + candy.getPrice()+ ", )";
+        sqlInsert += "', '" + candy.getPrice() + "')";
         db.execSQL(sqlInsert);
         db.close();
-}
+    }
     public void deleteById(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String sqlDelete = "delete from " + TABLE_CANDY;
-        sqlDelete += " where"+ID+"=" + id;
+        sqlDelete += " where " + ID + "=" + id;
         db.execSQL(sqlDelete);
         db.close();
     }
-    public void updateById(int id, String name, double price ) {
+    public void updateById(int id, String name, double price) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String sqlUpdate = "update" + TABLE_CANDY;
-        sqlUpdate += "set" + NAME + "= '" + name + "',";
-        sqlUpdate += PRICE + "='" + price + "'";
-        sqlUpdate += "where" + ID + "=" + id;
+        String sqlUpdate = "update " + TABLE_CANDY; // Thêm dấu cách sau "update"
+        sqlUpdate += " set " + NAME + "='" + name + "', "; // Thêm dấu cách sau "set" và phân tách trường và giá trị bằng dấu phẩy
+        sqlUpdate += PRICE + "='" + price + "' ";
+        sqlUpdate += " where " + ID + "=" + id;
         db.execSQL(sqlUpdate);
         db.close();
     }

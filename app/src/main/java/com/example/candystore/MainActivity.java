@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
         buttonWidth = size.x / 2;
         updateView();
     }
+
         protected void onResume() {
             super.onResume();
             updateView();
         }
-
         public void updateView(){
             ArrayList<Candy> candies = dbManager.selectAll();
                 // remove subviews inside
@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

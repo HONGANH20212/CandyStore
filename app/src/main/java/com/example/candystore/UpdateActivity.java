@@ -22,7 +22,6 @@ public class UpdateActivity extends AppCompatActivity {
         dbManager = new DatabaseManager(this);
         updateView();
     }
-
     // Build a View dynamically with all the candies
     public void updateView() {
         ArrayList<Candy> candies = dbManager.selectAll();
