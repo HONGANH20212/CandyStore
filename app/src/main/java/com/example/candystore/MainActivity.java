@@ -1,7 +1,6 @@
 package com.example.candystore;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Point;
 import android.view.MenuItem;
 import android.view.View;
@@ -89,13 +88,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent insertIntent = new Intent(this, InsertActivity.class);
                 this.startActivity(insertIntent);
                 return true;
-            Log.w("MainActivity", "Delete selected");
+
             case R.id.action_delete:
+                Log.w("MainActivity", "Delete selected");
                 Intent deleteIntent = new Intent(this, DeleteActivity.class);
                 this.startActivity(deleteIntent);
                 return true;
-            Log.w("MainActivity", "Update selected");
+
             case R.id.action_update:
+                Log.w("MainActivity", "Update selected");
                 Intent updateIntent = new Intent(this, UpdateActivity.class);
                 this.startActivity(updateIntent);
                 return true;
