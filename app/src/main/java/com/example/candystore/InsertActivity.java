@@ -1,9 +1,10 @@
 package com.example.candystore;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class InsertActivity extends AppCompatActivity {
     private DatabaseManager dbManager;
@@ -21,7 +22,7 @@ public class InsertActivity extends AppCompatActivity {
         String name = nameEditText.getText().toString();
         String priceString = priceEditText.getText().toString();
 
-// insert new candy in database.
+        // insert new candy in database.
         try {
             double price = Double.parseDouble(priceString);
             Candy candy = new Candy(0, name, price);
@@ -30,7 +31,7 @@ public class InsertActivity extends AppCompatActivity {
         }catch(NumberFormatException nfe) {
             Toast.makeText(this, "Price error", Toast.LENGTH_LONG).show();
         }
-// clear data
+        // clear data
 
         nameEditText.setText("");
         priceEditText.setText("");

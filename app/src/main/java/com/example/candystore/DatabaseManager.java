@@ -15,32 +15,33 @@ public class DatabaseManager extends SQLiteOpenHelper{
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     public void onCreate(SQLiteDatabase db) {
-// build sql create statement
-        String sqlCreate = "create table" +   TABLE_CANDY + "(" +ID;
-        sqlCreate += "integer primary key autoincrement," + NAME;
-        sqlCreate += "text,"+ PRICE + "real)";
-        db.execSQL(sqlCreate);
+        // build sql create statement
+        String sqlBuilder = "create table " + TABLE_CANDY +
+            " ( " + ID +
+            " integer primary key autoincrement, " + NAME +
+            " text, " + PRICE + " real)";
+        db.execSQL(sqlBuilder);
     }
 
     public void onUpgrade (SQLiteDatabase db,
-// Drop old table if it exists
+        // Drop old table if it exists
                            int oldVersion, int newVersion) {
         db.execSQL(" drop table if exists " + TABLE_CANDY);
-// Re-create tables
+        // Re-create tables
         onCreate(db);
     }
     public void insert(Candy candy){
         SQLiteDatabase db = this.getWritableDatabase();
-        String sqlInsert = "insert into" + TABLE_CANDY;
-        sqlInsert += "values(null, '" + candy.getName();
-        sqlInsert += "', '" + candy.getPrice()+ ", )";
+        String sqlInsert = "insert into " + TABLE_CANDY;
+        sqlInsert += " values(null, '" + candy.getName();
+        sqlInsert += " ', '" + candy.getPrice()+ ", )";
         db.execSQL(sqlInsert);
         db.close();
 }
     public void deleteById(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String sqlDelete = "delete from " + TABLE_CANDY;
-        sqlDelete += "where"+ID+"=" + id;
+        sqlDelete += " where"+ID+"=" + id;
         db.execSQL(sqlDelete);
         db.close();
     }

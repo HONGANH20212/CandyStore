@@ -1,5 +1,7 @@
 package com.example.candystore;
 
+import androidx.annotation.NonNull;
+
 public class Candy {
         private int id;
         private String name;
@@ -33,6 +35,7 @@ public class Candy {
             return price;
         }
 
+        @NonNull
         public String toString() {
             return id + " " + name + " " + price;
         }
