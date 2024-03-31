@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 for (Candy candy : candies) {
                     // create the button
                     buttons[i] = new CandyButton(this, candy);
-                    buttons[i].setText(candy.getName() + "\n" + candy.getPrice());
+                    buttons[i].setText(candy.getName() + "\n" + candy.getPrice() + "$");
                     buttons[i].setOnClickListener(bh);
                     //add up event
                     grid.addView(buttons[i], buttonWidth, GridLayout.LayoutParams.WRAP_CONTENT);
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
+        // Handle action bar item clicks he9re. The action bar will
         //automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();

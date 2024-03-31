@@ -1,16 +1,17 @@
 package com.example.candystore;
 
-import android.widget.Button;
 import android.content.Context;
+import androidx.appcompat.widget.AppCompatButton;
 
-public class CandyButton extends Button {
+public class CandyButton extends AppCompatButton {
     private Candy candy;
 
-    public CandyButton (Context context, Candy newCandy){
+    public CandyButton(Context context, Candy newCandy) {
         super(context);
         candy = newCandy;
     }
-    public double getPrice(){
+
+    public double getPrice() {
         return candy.getPrice();
     }
 }

@@ -37,6 +37,6 @@ public class Candy {
 
         @NonNull
         public String toString() {
-            return id + " " + name + " " + price;
+            return id + "." + name + " | " + price + "$";
         }
     }
